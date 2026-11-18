@@ -1,61 +1,68 @@
-// Every tuning number and colour in one place. The playfield is a fixed 1280x720 logical area;
-// the renderer scales it to the window, so no rule below depends on the screen size.
+/** Solstice Keys — palette & tuning (no external IP). */
+export const CITY = {
+  name: 'Solstice Keys',
+  eastDistrict: 'Coral Strand',
+  westDistrict: 'Crown Harbor',
+  cay: 'Starfish Cay',
+};
 
-export const FIELD = { width: 1280, height: 720, groundY: 664 };
+export const RADIO = [
+  { name: 'Wave 96', style: 'synth' },
+  { name: 'Heat FM', style: 'funk' },
+  { name: 'Tide Talk', style: 'talk' },
+  { name: 'Rio Rock', style: 'rock' },
+];
 
-/** The simulation's fixed step, in seconds: 60 updates a second whatever the display's rate. */
-export const STEP = 1 / 60;
+export const COLORS = {
+  pink: 0xff5a9a,
+  cyan: 0x2ee8ff,
+  orange: 0xff9e3d,
+  purple: 0x5b2d8e,
+  sand: 0xf4d9a8,
+  water: 0x2ec4b6,
+  asphalt: 0x2a2a32,
+  skyDayTop: 0x87ceeb,
+  skyDayBottom: 0xffd4a8,
+  skyNightTop: 0x12081f,
+  skyNightBottom: 0x4a1942,
+};
 
 export const PLAYER = {
-  width: 72,
-  height: 24,
-  speed: 560,
-  invulnerable: 1.5,
+  walkSpeed: 7.5,
+  sprintSpeed: 13,
+  jumpForce: 9,
+  height: 1.75,
+  radius: 0.35,
 };
 
-export const LIVES = 3;
-
-export const BLOCK = {
-  minWidth: 40,
-  maxWidth: 110,
-  height: 36,
-  speed: 240,
-  speedPerLevel: 30,
-  speedJitter: 90,
-  interval: 0.55,
-  intervalScale: 0.88,
-  minInterval: 0.14,
-  dodgePoints: 1,
+export const VEHICLE = {
+  maxSpeed: 42,
+  accel: 28,
+  brake: 35,
+  steer: 2.4,
+  grip: 0.92,
+  driftGrip: 0.55,
 };
 
-export const COIN = {
-  size: 24,
-  speed: 190,
-  speedPerLevel: 14,
-  interval: 1.4,
-  intervalJitter: 0.8,
-  points: 10,
+export const WANTED = {
+  maxStars: 6,
+  decayPerSec: 0.08,
+  heatCarJack: 0.35,
+  heatShoot: 0.25,
+  heatHitPed: 0.15,
 };
 
-/** Seconds of play per level, and the last level: speeds and spawn rates stop growing there. */
-export const LEVEL = { seconds: 12, max: 12 };
+export const WEAPONS = [
+  { id: 'fists', name: 'Fists', damage: 8, range: 2.2, rate: 4, mag: Infinity, auto: false },
+  { id: 'kestrel9', name: 'Kestrel 9', damage: 18, range: 85, rate: 6, mag: 12, auto: true },
+  { id: 'strom45', name: 'Strom 45', damage: 11, range: 70, rate: 10, mag: 32, auto: true },
+  { id: 'boomstick', name: 'Boomstick', damage: 42, range: 35, rate: 1.2, mag: 6, auto: false },
+  { id: 'tide', name: 'Tide Rifle', damage: 26, range: 120, rate: 4.5, mag: 24, auto: true },
+];
 
-/** How many falling things can exist at once; the pool is allocated once, at boot. */
-export const POOL_SIZE = 64;
-
-export const PALETTE = {
-  backdrop: '#11141b',
-  sky: '#1b1f2a',
-  ground: '#2a3040',
-  player: '#4fc3f7',
-  block: '#e5534b',
-  coin: '#f2c94c',
-  panel: '#252b38',
-  text: '#eef1f5',
-  muted: '#8b93a3',
+export const WORLD_SIZE = {
+  eastX: 120,
+  westX: -140,
+  bridgeZ: 0,
+  waterY: -0.05,
 };
-
-export const FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
-
-/** Where the best score is kept between visits (this browser only). */
-export const BEST_KEY = 'block-dodger.best';

@@ -1,5 +1,6 @@
 [
-  { "name": "1-start.jpg", "query": "?shot=start&seed=1" },
-  { "name": "2-play.jpg", "query": "?shot=play&seed=1" },
-  { "name": "3-end.jpg", "query": "?shot=end&seed=1" }
+  { "name": "1-menu.png", "query": "?shot=menu" },
+  { "name": "2-day-drive.png", "query": "?shot=day-drive" },
+  { "name": "3-night-wanted.png", "query": "?shot=night-wanted" },
+  { "name": "4-mission.png", "query": "?shot=mission" }
 ]
